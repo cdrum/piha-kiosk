@@ -1,0 +1,32 @@
+.fullWidth {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: initial;
+}
+
+#bulb-status_bulb-name {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color:#000000;
+}
+#bulb-status_last-refreshed-normal {
+	font-style: italic;
+	font-size: 10px;
+	color:#000000;
+}
+
+#bulb-status_last-refreshed-old	{
+	font-style: italic;
+	font-size: 10px;
+	color:#ff0000;
+}
+
+#bulb-status_bulb-color {
+	width: 20px;
+	height: 20px;
+	background: red;
+	position: absolute;
+	
+}
