@@ -1,35 +1,7 @@
 $(document).ready(function() {
 
 	(function poll() {
-	    setTimeout(function() {
-		/*
-		
-			// Function to get data from a RESTful URL and return objects in JSON
-			function getDataFromURL(url) {
-				$.ajax({
-		            url: url,
-		            type: "GET",
-					success: function(data) {
-						if (data.status !== "SUCCESS") {
-							console.log("Not found");
-						} else {
-							console.log("success");
-							return data.object;
-						}
-					},
-					
-					dataType: "json",
-		            complete: poll,
-		            timeout: 2000
-				})
-			}
-			
-			var patterns_return = getDataFromURL("http://192.168.1.221:5439/patterns");
-		//	console.log(patterns_return);
-			
-		//	var bulbs_return = getDataFromURL("http://192.168.1.221:5439/state");
-		//	console.log(bulbs_return);
-		*/
+	    setInterval(function() {
 		
 			// START Get Patterns
 			$.ajax({
@@ -50,7 +22,6 @@ $(document).ready(function() {
 					patterns_data = null;
 	            },
 	            dataType: "json",
-	            complete: poll,
 	            timeout: 2000
 	        })
 	
@@ -79,15 +50,10 @@ $(document).ready(function() {
 							}
 							block.append("<p id='bulb-status_bulb-name'>" + val.label + "<div id='bulb-status_bulb-color' style='background:" + val.rgb +"'></div></p>");
 							block.append("<p id='" + last_refreshed_css_id + "'>Last Refreshed: " + d.toLocaleString() + "</p>");
-							val = null;
-							key = null;
 						});
 					}
-					
-					bulbs_data = null;
 	            },
 	            dataType: "json",
-	            complete: poll,
 	            timeout: 2000
 	        })
 			// END Get State of Bulbs
